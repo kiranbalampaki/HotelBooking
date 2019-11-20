@@ -182,6 +182,8 @@ public class MainActivity extends AppCompatActivity{
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                month = month + 1;
+
                 if (boolCheckIn == true) {
                     tvCheckInDate.setText(year + "/" + month + "/" + dayOfMonth);
                     boolCheckIn = false;
