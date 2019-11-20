@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/colorBlue">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOTEL BOOKING"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:textColor="#ffffff"/>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/rectangle"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <Spinner
+            android:id="@+id/spinnerLocation"
+            style="@style/SpinnerStyle"/>
+
+        <Spinner
+            android:id="@+id/spinnerRoomType"
+            style="@style/SpinnerStyle"
+            android:layout_marginTop="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                style="@style/SmallText"
+                android:text="CHECK-IN"/>
+
+            <TextView
+                style="@style/SmallText"
+                android:text="CHECK-OUT"
+                android:textAlignment="textEnd"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <TextView
+                android:id="@+id/tvCheckInDate"
+                style="@style/SmallText"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/tvCheckOutDate"
+                style="@style/SmallText"
+                android:textSize="20dp"
+                android:textAlignment="textEnd"/>
+
+        </LinearLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:rowCount="2"
+            android:columnCount="3"
+            tools:context=".GridLayoutActivity">
+
+            <TextView
+                style="@style/SmallText"
+                android:text="ADULT"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+            <TextView
+                style="@style/SmallText"
+                android:text="CHILDREN"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+            <TextView
+                style="@style/SmallText"
+                android:text="ROOMS"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+
+
+            <EditText
+                style="@style/Numbers"
+                android:id="@+id/etNumberOfAdults"
+                android:text="02"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+
+            <EditText
+                style="@style/Numbers"
+                android:id="@+id/etNumberOfChildren"
+                android:text="00"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+
+            <EditText
+                style="@style/Numbers"
+                android:id="@+id/etNumberOfRooms"
+                android:text="01"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:textAlignment="center"/>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <Button
+        style="@style/FormStyle"
+        android:id="@+id/btnCalculate"
+        android:text="CALCULATE"
+        android:background="@drawable/button"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvLocation"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvRoomType"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvGuests"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvNumberOfDays"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvRoomTotal"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvVAT"></TextView>
+
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvServiceCharge"></TextView>
+
+        <TextView
+            style="@style/BillText"
+            android:id="@+id/tvTotal"></TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
