@@ -1,7 +1,6 @@
 package com.example.hotelbooking;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -15,7 +14,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -26,7 +24,6 @@ public class MainActivity extends AppCompatActivity{
     private Spinner spinnerLocation, spinnerRoomType;
     private EditText etNumberOfAdults, etNumberOfChildren, etNumberOfRooms;
     private TextView tvCheckInDate, tvCheckOutDate, tvLocation, tvRoomType, tvRoomTotal, tvVAT, tvServiceCharge, tvTotal, tvNumberOfDays, tvGuests;
-
     private Boolean boolCheckIn, boolCheckOut;
     private Button btnCalculate;
 
@@ -57,7 +54,6 @@ public class MainActivity extends AppCompatActivity{
         String date = new SimpleDateFormat("yyyy/MM/dd").format(new Date());
         tvCheckInDate.setText(date);
         tvCheckOutDate.setText(date);
-
 
         tvLocation = findViewById(R.id.tvLocation);
         tvRoomType = findViewById(R.id.tvRoomType);
@@ -148,6 +144,11 @@ public class MainActivity extends AppCompatActivity{
                     long diff = checkOut.getTime() - checkIn.getTime();
                     long diffDays = diff / (24 * 60 * 60 * 1000);
                     days = (int) diffDays;
+
+                    if (days < 1){
+                        Toast.makeText(MainActivity.this, "Please enter valid dates", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
                     total = rate * days * Float.parseFloat(etNumberOfRooms.getText().toString());
                     VAT = (total*13)/100;

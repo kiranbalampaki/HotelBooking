@@ -43,5 +43,8 @@
         <item name="android:textColor">#ffffff</item>
     </style>
 
+    <style name="ProgressBar">
+        <item name="colorAccent">@color/colorBlue</item>
+    </style>
 
 </resources>
